@@ -1,0 +1,66 @@
+body {
+    font-family: monospace;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+header {
+    grid-column: 1 / -1;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 10px;
+    color: black;
+}
+
+nav a:hover {
+    background-color: lightgray;
+}
+
+p a {
+    display: inline-block;
+    color: darkgreen;
+}
+
+p a:hover {
+    background-color: lightgray;
+}
+
+main {
+    grid-column: 1 / -1;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.columns column {
+    padding: 20px;
+    position: relative;
+}
+
+.columns column::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    height: 100%;
+    width: 1px;
+    background-color: lightgray;
+}
+
+.columns column:last-child::before {
+    display: none;
+}
