@@ -6,7 +6,32 @@ body {
     padding: 20px;
 }
 
+section {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: lightgray;
+    margin: 20px 0px;
+    margin-left: -30px;
+}
+
+section hr {
+    border: none;
+    height: 1px;
+    background-color: lightgray;
+    margin: 5px -10px;
+}
+
 header {
+    border-radius: 50px;
+    border: 1px solid lightgray;
     grid-column: 1 / -1;
     padding: 10px;
     text-align: center;
@@ -18,16 +43,12 @@ nav a {
     color: black;
 }
 
-nav a:hover {
-    background-color: lightgray;
-}
-
-p a {
+a {
     display: inline-block;
     color: darkgreen;
 }
 
-p a:hover {
+a:hover {
     background-color: lightgray;
 }
 
@@ -36,6 +57,14 @@ main {
     padding: 20px;
     margin: 0 auto;
     text-align: left;
+}
+
+img {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    /* padding: 10px; */
+    max-width: 366px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .columns {
@@ -63,12 +92,4 @@ main {
 
 .columns column:last-child::before {
     display: none;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: lightgray;
-    margin: 20px 0px;
-    margin-left: -30px;
 }

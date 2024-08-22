@@ -27,6 +27,27 @@
                 ·
                 <a href="https://github.com/hallvardnmbu" target="_blank">github/hallvardnmbu</a>
             </p>
+
+            <br />
+            <script>
+                function switchImage() {
+                    var img = document.getElementById("image");
+                    img.src = "./images/there-is-a-brain-inside.jpeg";
+                }
+
+                function revertImage() {
+                    var img = document.getElementById("image");
+                    img.src = "./images/hallvard.jpeg";
+                }
+            </script>
+
+            <img
+                id="image"
+                src="./images/hallvard.jpeg"
+                alt="Meg selv."
+                onmouseover="switchImage()"
+                onmouseout="revertImage()"
+            />
         </main>
     </body>
 </html>

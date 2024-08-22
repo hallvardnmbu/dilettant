@@ -9,8 +9,8 @@ RewriteRule ^(.*)$ $1.html [L]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
-# Redirect index.html to root
-RewriteRule ^index\.html$ / [R=301,L]
+# Redirect home.html to root
+RewriteRule ^home\.html$ / [R=301,L]
 
 # Ensure https
 RewriteCond %{HTTPS} off
