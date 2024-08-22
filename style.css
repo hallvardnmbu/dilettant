@@ -40,7 +40,7 @@ main {
 
 .columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     width: 80%;
     margin: 0 auto;
@@ -63,4 +63,12 @@ main {
 
 .columns column:last-child::before {
     display: none;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: lightgray;
+    margin: 20px 0px;
+    margin-left: -30px;
 }
