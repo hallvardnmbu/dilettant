@@ -1,46 +1,66 @@
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./fonts/JetBrainsMono/Regular.woff2") format("woff2");
+    font-weight: 400; /* Normal weight */
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./fonts/JetBrainsMono/Light.woff2") format("woff2");
+    font-weight: 300; /* Light weight */
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./fonts/JetBrainsMono/Bold.woff2") format("woff2");
+    font-weight: 700; /* Bold weight */
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./fonts/JetBrainsMono/ExtraBold.woff2") format("woff2");
+    font-weight: 800; /* Extra Bold weight */
+}
+
 body {
-    font-family: monospace;
+    font-family: "JetBrainsMono", monospace;
     display: grid;
     grid-template-rows: auto 1fr;
     grid-gap: 20px;
     padding: 20px;
 }
 
-.dilettant section {
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin: 5px 0px;
-}
-
-.dilettant hr {
-    border: none;
-    height: 1px;
-    background-color: lightgray;
-    margin: 20px 0px;
-    margin-left: -30px;
-}
-
-.dilettant section hr {
-    border: none;
-    height: 1px;
-    background-color: lightgray;
-    margin: 5px -10px;
-}
-
 .dilettant header {
-    border-radius: 50px;
-    border: 1px solid lightgray;
+    border: 1px solid black;
+    background-color: #cccccc;
     grid-column: 1 / -1;
-    padding: 10px;
     text-align: center;
 }
 
 .dilettant nav a {
     display: inline-block;
-    margin: 0 10px;
+    margin: -1px 10px;
     color: black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.dilettant nav a:hover {
+    background-color: white;
+    padding: 9px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.dilettant nav a.active {
+    background-color: white;
+    padding: 9px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .dilettant a {
@@ -49,34 +69,60 @@ body {
 }
 
 .dilettant a:hover {
-    background-color: lightgray;
+    background-color: #cccccc;
+}
+
+.dilettant section {
+    border: 1px solid black;
+    background-color: #eeeeee;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.dilettant section hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 5px -10px;
 }
 
 .dilettant main {
     grid-column: 1 / -1;
-    padding: 20px;
-    margin: 0 auto;
     text-align: left;
 }
 
+.dilettant main.contact {
+    text-align: center;
+}
+
 .dilettant img {
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    /* padding: 10px; */
-    max-width: 366px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    max-width: 448px;
+    box-shadow:
+        10px 10px 0px #cccccc,
+        10px 10px 0px 1px black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dilettant hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 25px 0px;
+    margin-left: -25px;
 }
 
 .dilettant .columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    width: 80%;
+    grid-gap: 50px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .dilettant .columns column {
-    padding: 20px;
     position: relative;
 }
 
@@ -84,12 +130,41 @@ body {
     content: "";
     position: absolute;
     top: 0;
-    right: -10px;
+    right: -25px;
     height: 100%;
     width: 1px;
-    background-color: lightgray;
+    background-color: black;
 }
 
 .dilettant .columns column:last-child::before {
     display: none;
+}
+
+@media (max-width: 680px) {
+    .dilettant header {
+        border: none;
+        background-color: white;
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .dilettant nav a {
+        display: inline-block;
+        margin: -1px 10px;
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .dilettant nav a:hover {
+        background-color: #cccccc;
+        padding: 9px;
+        border: 1px solid black;
+    }
+
+    .dilettant nav a.active {
+        background-color: #cccccc;
+        padding: 9px;
+        border: 1px solid black;
+    }
 }
