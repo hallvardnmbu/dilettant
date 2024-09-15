@@ -115,7 +115,7 @@ body {
 
 .dilettant img {
     border: 1px solid black;
-    max-width: 448px;
+    max-width: 450px;
     box-shadow:
         10px 10px 0px #eeeeee,
         10px 10px 0px 1px black;
@@ -158,6 +158,24 @@ body {
     display: none;
 }
 
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 0;
+    padding-bottom: 25px;
+}
+.contact span {
+    display: inline;
+}
+.wide {
+    display: block;
+}
+.long {
+    display: none;
+}
+
 @media (max-width: 680px) {
     .dilettant header {
         border: none;
@@ -170,19 +188,20 @@ body {
         display: inline-block;
         margin: -1px 10px;
         color: black;
-        padding: 10px;
+        padding: 5px;
         text-decoration: none;
+        margin: 10px 0px;
     }
 
     .dilettant nav a:hover {
         background-color: #eeeeee;
-        padding: 9px;
+        padding: 4px;
         border: 1px solid black;
     }
 
     .dilettant nav a.active {
         background-color: #eeeeee;
-        padding: 9px;
+        padding: 4px;
         border: 1px solid black;
     }
 
@@ -194,5 +213,28 @@ body {
     .dilettant hr {
         background-color: white;
         margin: 10px 0px;
+    }
+
+    .dilettant img {
+        border: 1px solid black;
+        max-width: 240px;
+        box-shadow:
+            10px 10px 0px #eeeeee,
+            10px 10px 0px 1px black;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wide {
+        display: none;
+    }
+    .long {
+        display: flex;
+        justify-content: center;
+        width: 240px;
+    }
+    .location {
+        margin-right: auto;
     }
 }
