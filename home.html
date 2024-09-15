@@ -18,8 +18,56 @@
         </header>
 
         <main>
-            <p>"Henlo."</p>
-            <p>&nbsp;- Hallvard</p>
+            <div class="words">
+                <p>"Henlo."</p>
+                <p>"Heisann."</p>
+                <p>"Hello."</p>
+                <p>"HALLO."</p>
+                <p>"Heisa."</p>
+            </div>
+            <p>&nbsp;- <strong>Hallvard</strong></p>
         </main>
+
+        <footer>
+            <div class="foot"></div>
+            <button id="border">Thicker</button>
+            <div class="foot"></div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const root = document.documentElement;
+                const toggleButton = document.getElementById("border");
+
+                function toggleThickness() {
+                    const currentBorder = getComputedStyle(root)
+                        .getPropertyValue("--border")
+                        .trim();
+                    const borderThickness = currentBorder === "1px" ? "2px" : "1px";
+                    toggleButton.textContent = borderThickness === "1px" ? "Thicker" : "Thinner";
+                    root.style.setProperty("--border", borderThickness);
+                    localStorage.setItem("borderThickness", borderThickness);
+                }
+
+                const borderThickness = localStorage.getItem("borderThickness");
+                if (borderThickness) {
+                    toggleButton.textContent = borderThickness === "1px" ? "Thicker" : "Thinner";
+                    root.style.setProperty("--border", borderThickness);
+                }
+
+                toggleButton.addEventListener("click", toggleThickness);
+
+                const words = document.querySelectorAll(".words p");
+                let currentIndex = 0;
+                const displayTime = 5000;
+                function showNextWord() {
+                    words.forEach((word) => (word.style.opacity = 0));
+                    words[currentIndex].style.opacity = 1;
+                    currentIndex = (currentIndex + 1) % words.length;
+                }
+                showNextWord();
+                setInterval(showNextWord, displayTime);
+            });
+        </script>
     </body>
 </html>

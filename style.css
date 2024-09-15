@@ -22,51 +22,120 @@
     font-weight: 800; /* Extra Bold weight */
 }
 
+:root {
+    --border: 2px;
+}
+
 body {
     font-family: "JetBrainsMono", monospace;
     display: grid;
     grid-template-rows: auto 1fr;
     grid-gap: 20px;
     padding: 20px;
+    line-height: 1.2rem;
+    min-height: 95vh;
+}
+
+.dilettant {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.words {
+    font-family: "JetBrainsMono", monospace;
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.words p {
+    font-family: "JetBrainsMono", monospace;
+    position: absolute;
+    opacity: 0;
+    /* transition: opacity 2s ease-in-out; */
+}
+
+.dilettant footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    margin-top: auto;
+}
+
+.dilettant footer .foot {
+    flex: 1;
+    border: var(--border) solid black;
+    background-color: #eeeeee;
+    padding: calc(9px + var(--border));
+    height: calc(9px + 2 * var(--border));
+}
+
+.dilettant button {
+    border: var(--border) solid black;
+    color: black;
+    background-color: white;
+    padding: calc(9px + var(--border));
+    font-family: "JetBrainsMono", monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: calc(-9px - var(--border));
+    margin-bottom: calc(-9px + 5px - var(--border));
+    margin-left: 20px;
+    margin-right: 25px;
+    box-shadow:
+        5px 5px 0px #eeeeee,
+        5px 5px 0px var(--border) black;
 }
 
 .dilettant h1 {
     font-weight: 800;
     color: #eeeeee;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: max(calc(var(--border) - 0.5px), 1px) black;
 }
 
 .dilettant header {
-    border: 1px solid black;
+    border: var(--border) solid black;
     background-color: #eeeeee;
     grid-column: 1 / -1;
     text-align: center;
+    padding: 9px;
 }
 
 .dilettant nav a {
     display: inline-block;
-    margin: -1px 10px;
+    padding: var(--border);
+    padding-left: calc(9px + 2 * var(--border));
+    padding-right: calc(9px + 2 * var(--border));
     color: black;
-    padding: 10px;
     text-decoration: none;
 }
 
 .dilettant nav a:hover {
+    border-left: var(--border) solid black;
+    border-right: var(--border) solid black;
+    border-bottom: none;
+    border-top: none;
     background-color: white;
-    padding: 9px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    padding: calc(9px + var(--border));
+    padding-top: calc(9px + 2 * var(--border));
+    padding-bottom: calc(9px + 2 * var(--border));
+    cursor: pointer;
+    margin-top: calc(-9px - 2 * var(--border));
+    margin-bottom: calc(-9px - 2 * var(--border));
 }
 
 .dilettant nav a.active {
+    border-left: var(--border) solid black;
+    border-right: var(--border) solid black;
+    border-bottom: none;
+    border-top: none;
     background-color: white;
-    padding: 9px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    padding: calc(9px + 2 * var(--border));
+    cursor: pointer;
+    margin-top: calc(-9px - 2 * var(--border));
+    margin-bottom: calc(-9px - 2 * var(--border));
 }
 
 .dilettant a {
@@ -79,13 +148,13 @@ body {
 }
 
 .dilettant section {
-    border: 1px solid black;
+    border: var(--border) solid black;
     margin: 20px 0px;
     margin-right: 6px;
     overflow: hidden;
     box-shadow:
         5px 5px 0px #eeeeee,
-        5px 5px 0px 1px black;
+        5px 5px 0px var(--border) black;
 }
 .dilettant section .header {
     background-color: #eeeeee;
@@ -99,7 +168,7 @@ body {
 }
 .dilettant section hr {
     border: none;
-    height: 1px;
+    height: var(--border);
     background-color: black;
     margin: 0;
 }
@@ -114,11 +183,11 @@ body {
 }
 
 .dilettant img {
-    border: 1px solid black;
+    border: var(--border) solid black;
     max-width: 450px;
     box-shadow:
         10px 10px 0px #eeeeee,
-        10px 10px 0px 1px black;
+        10px 10px 0px var(--border) black;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -126,10 +195,12 @@ body {
 
 .dilettant hr {
     border: none;
-    height: 1px;
-    background-color: black;
+    height: 5px;
+    background-color: #eeeeee;
+    border: var(--border) solid black;
+    border-left: none;
     margin: 25px 0px;
-    margin-left: -25px;
+    margin-left: calc(-22px - var(--border));
 }
 
 .dilettant .columns {
@@ -147,11 +218,12 @@ body {
 .dilettant .columns column::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: -25px;
-    height: 100%;
-    width: 1px;
-    background-color: black;
+    top: 18px;
+    right: -28px;
+    height: calc(100% - 33px);
+    width: 5px;
+    background-color: #eeeeee;
+    border: var(--border) solid black;
 }
 
 .dilettant .columns column:last-child::before {
@@ -177,6 +249,14 @@ body {
 }
 
 @media (max-width: 680px) {
+    .dilettant footer .foot {
+        flex: 1;
+        border: var(--border) solid black;
+        background-color: #eeeeee;
+        padding: calc(9px + var(--border));
+        height: var(--border);
+    }
+
     .dilettant header {
         border: none;
         background-color: white;
@@ -186,7 +266,7 @@ body {
 
     .dilettant nav a {
         display: inline-block;
-        margin: -1px 10px;
+        margin: calc(-1 * var(--border)) 10px;
         color: black;
         padding: 5px;
         text-decoration: none;
@@ -196,13 +276,13 @@ body {
     .dilettant nav a:hover {
         background-color: #eeeeee;
         padding: 4px;
-        border: 1px solid black;
+        border: var(--border) solid black;
     }
 
     .dilettant nav a.active {
         background-color: #eeeeee;
         padding: 4px;
-        border: 1px solid black;
+        border: var(--border) solid black;
     }
 
     .dilettant .columns {
@@ -210,17 +290,22 @@ body {
         grid-gap: 0px;
     }
 
+    .dilettant .columns column::before {
+        display: none;
+    }
+
     .dilettant hr {
         background-color: white;
+        border: none;
         margin: 10px 0px;
     }
 
     .dilettant img {
-        border: 1px solid black;
+        border: var(--border) solid black;
         max-width: 240px;
         box-shadow:
             10px 10px 0px #eeeeee,
-            10px 10px 0px 1px black;
+            10px 10px 0px var(--border) black;
         display: block;
         margin-left: auto;
         margin-right: auto;

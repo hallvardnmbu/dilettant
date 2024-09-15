@@ -26,7 +26,7 @@
                     <hr />
                     <div class="content">
                         <strong>Board member</strong><br />
-                        &nbsp;USBL borettslag.
+                        USBL borettslag.
                     </div>
                 </section>
 
@@ -35,8 +35,8 @@
                     <hr />
                     <div class="content">
                         <strong>Student mentor</strong><br />
-                        &nbsp;NAV and Norwegian University of Life Sciences<br />
-                        &nbsp;Helping a master student with difficulties.<br />
+                        NAV and Norwegian University of Life Sciences<br />
+                        Helping a master student with difficulties.<br />
                     </div>
                 </section>
 
@@ -51,8 +51,8 @@
                     <hr />
                     <div class="content">
                         <strong>Teaching assistant</strong><br />
-                        &nbsp;Norwegian University of Life Sciences<br />
-                        &nbsp;Respectively from the top; IND320, DAT200, INF201 and (2x) INF120.
+                        Norwegian University of Life Sciences<br />
+                        Respectively from the top; IND320, DAT200, INF201 and (2x) INF120.
                     </div>
                 </section>
 
@@ -61,8 +61,8 @@
                     <hr />
                     <div class="content">
                         <strong>Power analytics</strong><br />
-                        &nbsp;Lyse Produksjon AS<br />
-                        &nbsp;Seasonal employee. &nbsp;Part-time employee.
+                        Lyse Produksjon AS<br />
+                        Seasonal employee. Part-time employee.
                     </div>
                 </section>
 
@@ -71,10 +71,10 @@
                     <hr />
                     <div class="content">
                         <strong>Software development</strong><br />
-                        &nbsp;Norwegian University of Life Sciences<br />
-                        &nbsp;Simulation software for ECOL100.<br />
-                        &nbsp;Based on project task from INF200.<br />
-                        &nbsp;<a href="https://github.com/hallvardnmbu/ecosystem" target="_blank"
+                        Norwegian University of Life Sciences<br />
+                        Simulation software for ECOL100.<br />
+                        Based on project task from INF200.<br />
+                        <a href="https://github.com/hallvardnmbu/ecosystem" target="_blank"
                             >Repository</a
                         >.
                     </div>
@@ -85,8 +85,8 @@
                     <hr />
                     <div class="content">
                         <strong>Cleaner</strong><br />
-                        &nbsp;ISS<br />
-                        &nbsp;Weekend- and summer substitute.
+                        ISS<br />
+                        Weekend- and summer substitute.
                     </div>
                 </section>
 
@@ -95,8 +95,8 @@
                     <hr />
                     <div class="content">
                         <strong>Student host</strong><br />
-                        &nbsp;Norwegian University of Life Sciences<br />
-                        &nbsp;Study related and social aid for students in need.
+                        Norwegian University of Life Sciences<br />
+                        Study related and social aid for students in need.
                     </div>
                 </section>
 
@@ -105,9 +105,9 @@
                     <hr />
                     <div class="content">
                         <strong>Warehouse worker</strong><br />
-                        &nbsp;Motehuset AS<br />
-                        &nbsp;Work every Monday and during holidays.<br />
-                        &nbsp;Handling incoming goods, both logging and logistics.
+                        Motehuset AS<br />
+                        Work every Monday and during holidays.<br />
+                        Handling incoming goods, both logging and logistics.
                     </div>
                 </section>
             </column>
@@ -120,8 +120,8 @@
                     <hr />
                     <div class="content">
                         <strong>Committee boss</strong><br />
-                        &nbsp;Studentsamfunnet i Ås<br />
-                        &nbsp;Marketing and inclusion. Leader of six volunteers.
+                        Studentsamfunnet i Ås<br />
+                        Marketing and inclusion. Leader of six volunteers.
                     </div>
                 </section>
 
@@ -130,8 +130,8 @@
                     <hr />
                     <div class="content">
                         <strong>Student contact</strong><br />
-                        &nbsp;NITO Studentene<br />
-                        &nbsp;Marketing of, and hosting study related events.
+                        NITO Studentene<br />
+                        Marketing of, and hosting study related events.
                     </div>
                 </section>
 
@@ -140,7 +140,7 @@
                     <hr />
                     <div class="content">
                         <strong>Functionary</strong><br />
-                        &nbsp;UKA i Ås
+                        UKA i Ås
                     </div>
                 </section>
 
@@ -153,9 +153,9 @@
                     <hr />
                     <div class="content">
                         <strong>Winner of hackathon</strong><br />
-                        &nbsp;Norges Bank Investment Management<br />
-                        &nbsp;Meeting with Nicolai Tangen.<br />
-                        &nbsp;<a href="https://github.com/hallvardnmbu/hackathon" target="_blank"
+                        Norges Bank Investment Management<br />
+                        Meeting with Nicolai Tangen.<br />
+                        <a href="https://github.com/hallvardnmbu/hackathon" target="_blank"
                             >Repository</a
                         >.
                     </div>
@@ -166,7 +166,7 @@
                     <hr />
                     <div class="content">
                         <strong>Winner of case</strong><br />
-                        &nbsp;Presentation of the case work at the
+                        Presentation of the case work at the
                         <a href="https://energirike.no" target="_blank">EnergiRike</a>-conference.
                     </div>
                 </section>
@@ -176,11 +176,20 @@
                     <hr />
                     <div class="content">
                         <strong>Leader course</strong><br />
-                        &nbsp;Studentsamskipnaden i Ås and Helsestasjon for Ungdom og Studenter i
-                        Ås.
+                        Studentsamskipnaden i Ås and Helsestasjon for Ungdom og Studenter i Ås.
                     </div>
                 </section>
             </column>
         </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const root = document.documentElement;
+                const borderThickness = localStorage.getItem("borderThickness");
+                if (borderThickness) {
+                    root.style.setProperty("--border", borderThickness);
+                }
+            });
+        </script>
     </body>
 </html>

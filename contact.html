@@ -78,5 +78,15 @@
                 onmouseout="revertImage()"
             />
         </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const root = document.documentElement;
+                const borderThickness = localStorage.getItem("borderThickness");
+                if (borderThickness) {
+                    root.style.setProperty("--border", borderThickness);
+                }
+            });
+        </script>
     </body>
 </html>
