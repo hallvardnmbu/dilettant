@@ -30,9 +30,15 @@ body {
     padding: 20px;
 }
 
+.dilettant h1 {
+    font-weight: 800;
+    color: #eeeeee;
+    -webkit-text-stroke: 1px black;
+}
+
 .dilettant header {
     border: 1px solid black;
-    background-color: #cccccc;
+    background-color: #eeeeee;
     grid-column: 1 / -1;
     text-align: center;
 }
@@ -69,21 +75,33 @@ body {
 }
 
 .dilettant a:hover {
-    background-color: #cccccc;
+    background-color: #eeeeee;
 }
 
 .dilettant section {
     border: 1px solid black;
+    margin: 20px 0px;
+    margin-right: 6px;
+    overflow: hidden;
+    box-shadow:
+        5px 5px 0px #eeeeee,
+        5px 5px 0px 1px black;
+}
+.dilettant section .header {
     background-color: #eeeeee;
     padding: 10px;
-    margin: 20px 0px;
+    /* padding-bottom: 5px; */
+    /* padding-top: 5px; */
 }
-
+.dilettant section .content {
+    background-color: white;
+    padding: 10px;
+}
 .dilettant section hr {
     border: none;
     height: 1px;
     background-color: black;
-    margin: 5px -10px;
+    margin: 0;
 }
 
 .dilettant main {
@@ -99,7 +117,7 @@ body {
     border: 1px solid black;
     max-width: 448px;
     box-shadow:
-        10px 10px 0px #cccccc,
+        10px 10px 0px #eeeeee,
         10px 10px 0px 1px black;
     display: block;
     margin-left: auto;
@@ -157,14 +175,24 @@ body {
     }
 
     .dilettant nav a:hover {
-        background-color: #cccccc;
+        background-color: #eeeeee;
         padding: 9px;
         border: 1px solid black;
     }
 
     .dilettant nav a.active {
-        background-color: #cccccc;
+        background-color: #eeeeee;
         padding: 9px;
         border: 1px solid black;
+    }
+
+    .dilettant .columns {
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
+
+    .dilettant hr {
+        background-color: white;
+        margin: 10px 0px;
     }
 }
