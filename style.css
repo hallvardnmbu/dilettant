@@ -23,7 +23,7 @@
 }
 
 :root {
-    --border: 1px;
+    --border: 2px;
 }
 
 body {
@@ -42,14 +42,7 @@ body {
     flex: 1;
 }
 
-.words {
-    font-family: "JetBrainsMono", monospace;
-    position: relative;
-    margin-bottom: 45px;
-}
-
 .words p {
-    font-family: "JetBrainsMono", monospace;
     position: absolute;
     opacity: 0;
     /* transition: opacity 2s ease-in-out; */
@@ -66,10 +59,8 @@ body {
 
 .dilettant footer .foot {
     flex: 1;
-    border: var(--border) solid black;
-    background-color: #eeeeee;
-    padding: calc(9px + var(--border));
-    height: calc(9px + 2 * var(--border));
+    background-color: black;
+    height: var(--border);
 }
 
 .dilettant button {
@@ -89,10 +80,14 @@ body {
         5px 5px 0px var(--border) black;
 }
 
+.dilettant button:hover {
+    background-color: #fafafa;
+}
+
 .dilettant h1 {
     font-weight: 800;
     color: #eeeeee;
-    -webkit-text-stroke: max(calc(var(--border) - 0.5px), 1px) black;
+    -webkit-text-stroke: max(min(calc(var(--border) - 0.5px), 2px), 1px) black;
 }
 
 .dilettant header {
@@ -100,51 +95,49 @@ body {
     background-color: #eeeeee;
     grid-column: 1 / -1;
     text-align: center;
-    padding: 9px;
 }
 
 .dilettant nav a {
     display: inline-block;
-    padding: var(--border);
-    padding-left: calc(9px + 2 * var(--border));
-    padding-right: calc(9px + 2 * var(--border));
     color: black;
     text-decoration: none;
+    padding: calc(9px + var(--border));
+    margin: calc(-1 * var(--border)) 5px;
 }
 
 .dilettant nav a:hover {
+    cursor: pointer;
+    background-color: white;
+    border-top: none;
+    border-bottom: none;
     border-left: var(--border) solid black;
     border-right: var(--border) solid black;
-    border-bottom: none;
-    border-top: none;
-    background-color: white;
-    padding: calc(9px + var(--border));
-    padding-top: calc(9px + 2 * var(--border));
-    padding-bottom: calc(9px + 2 * var(--border));
-    cursor: pointer;
-    margin-top: calc(-9px - 2 * var(--border));
-    margin-bottom: calc(-9px - 2 * var(--border));
+    padding: 9px;
+    padding-top: calc(9px + var(--border));
+    padding-bottom: calc(9px + var(--border));
 }
 
 .dilettant nav a.active {
+    cursor: pointer;
+    background-color: white;
+    border-top: none;
+    border-bottom: none;
     border-left: var(--border) solid black;
     border-right: var(--border) solid black;
-    border-bottom: none;
-    border-top: none;
-    background-color: white;
-    padding: calc(9px + 2 * var(--border));
-    cursor: pointer;
-    margin-top: calc(-9px - 2 * var(--border));
-    margin-bottom: calc(-9px - 2 * var(--border));
+    padding: 9px;
+    padding-top: calc(9px + var(--border));
+    padding-bottom: calc(9px + var(--border));
 }
 
 .dilettant a {
     display: inline-block;
-    color: darkgreen;
+    color: #666666;
+    font-weight: 700;
+    text-decoration-thickness: min(var(--border), 2px);
 }
 
 .dilettant a:hover {
-    background-color: #eeeeee;
+    background-color: #cccccc;
 }
 
 .dilettant section {
@@ -158,9 +151,8 @@ body {
 }
 .dilettant section .header {
     background-color: #eeeeee;
-    padding: 10px;
-    /* padding-bottom: 5px; */
-    /* padding-top: 5px; */
+    font-weight: 700;
+    padding: 5px 10px;
 }
 .dilettant section .content {
     background-color: white;
@@ -235,8 +227,10 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    line-height: 0;
     padding-bottom: 25px;
+}
+.contact p {
+    margin: 5px 0;
 }
 .contact span {
     display: inline;
@@ -249,14 +243,6 @@ body {
 }
 
 @media (max-width: 680px) {
-    .dilettant footer .foot {
-        flex: 1;
-        border: var(--border) solid black;
-        background-color: #eeeeee;
-        padding: calc(9px + var(--border));
-        height: var(--border);
-    }
-
     .dilettant header {
         border: none;
         background-color: white;
@@ -266,9 +252,8 @@ body {
 
     .dilettant nav a {
         display: inline-block;
-        margin: calc(-1 * var(--border)) 10px;
         color: black;
-        padding: 5px;
+        padding: calc(4px + var(--border));
         text-decoration: none;
         margin: 10px 0px;
     }
