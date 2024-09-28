@@ -19,25 +19,14 @@
 
         <main>
             <div class="words">
-                <p>"Henlo."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
-                <p>"Hei."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
-                <p>
-                    "'Is man one of God's blunders? Or is God one of man's blunders?' - Friedrich
-                    Nietzsche"<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>
-                </p>
-                <p>"Hallo."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
-                <p>"Heisann."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
-                <p>"Hello."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
-                <p>"HALLO."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
-                <p>"Heisa."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong></p>
+                <p></p>
             </div>
         </main>
 
         <footer>
-            <div class="foot"></div>
             <button id="thinner">Thinner</button>
+            <p>© Hallvard H. Lavik</p>
             <button id="thicker">Thicker</button>
-            <div class="foot"></div>
         </footer>
 
         <script>
@@ -77,12 +66,23 @@
                 thickerButton.addEventListener("click", makeThicker);
                 thinnerButton.addEventListener("click", makeThinner);
 
-                const words = document.querySelectorAll(".words p");
+                const words = [
+                    '"Henlo."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"Hei."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"Is man one of God\'s blunders? Or is God one of man\'s blunders? - Friedrich Nietzsche"<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"Hallo."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"Heisann."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"Hello."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"HALLO."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                    '"Heisa."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
+                ];
+                const wordElement = document.querySelector(".words p");
                 let currentIndex = 0;
                 const displayTime = 3000;
                 function showNextWord() {
-                    words.forEach((word) => (word.style.opacity = 0));
-                    words[currentIndex].style.opacity = 1;
+                    wordElement.style.opacity = 0;
+                    wordElement.innerHTML = words[currentIndex];
+                    wordElement.style.opacity = 1;
                     currentIndex = (currentIndex + 1) % words.length;
                 }
                 showNextWord();

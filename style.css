@@ -43,38 +43,32 @@ body {
 }
 
 .words p {
-    position: absolute;
-    opacity: 0;
-    /* transition: opacity 2s ease-in-out; */
+    /* position: absolute; */
+    padding: 10px;
+    border: var(--border) solid black;
+    box-shadow:
+        5px 5px 0px #eeeeee,
+        5px 5px 0px var(--border) black;
+    margin: 20px 0px;
 }
 
 .dilettant footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 5px;
+    align-items: flex-end;
     margin-top: auto;
 }
-
-.dilettant footer .foot {
-    flex: 1;
-    background-color: black;
-    height: var(--border);
+.dilettant footer p {
+    margin: 0;
 }
-
 .dilettant button {
     border: var(--border) solid black;
     color: black;
     background-color: white;
-    padding: calc(9px + var(--border));
     font-family: "JetBrainsMono", monospace;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: calc(-9px - var(--border));
-    margin-bottom: calc(-9px + 5px - var(--border));
-    margin-left: 20px;
-    margin-right: 25px;
     box-shadow:
         5px 5px 0px #eeeeee,
         5px 5px 0px var(--border) black;
