@@ -78,6 +78,21 @@ body {
     background-color: #fafafa;
 }
 
+#copyright {
+    display: flex;
+    flex-direction: row;
+    gap: calc(4 * var(--border));
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+}
+#name {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(4 * var(--border));
+}
+
 .dilettant h1 {
     font-weight: 800;
     color: #eeeeee;
