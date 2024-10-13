@@ -24,23 +24,27 @@
         </main>
 
         <footer>
-            <button id="thinner">Thinner</button>
-            <div id="copyright">
-                <p>©</p>
-                <div id="name">
-                    <p>Hallvard</p>
-                    <p>H.</p>
-                    <p>Lavik</p>
-                </div>
+            <div id="big">
+                <button id="thinner-1">Thinner</button>
+                <p>© Hallvard H. Lavik</p>
+                <button id="thicker-1">Thicker</button>
             </div>
-            <button id="thicker">Thicker</button>
+            <div id="small">
+                <div id="buttons">
+                    <button id="thinner-2">Thinner</button>
+                    <button id="thicker-2">Thicker</button>
+                </div>
+                <p>© Hallvard H. Lavik</p>
+            </div>
         </footer>
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const root = document.documentElement;
-                const thickerButton = document.getElementById("thicker");
-                const thinnerButton = document.getElementById("thinner");
+                const thickerButton1 = document.getElementById("thicker-1");
+                const thinnerButton1 = document.getElementById("thinner-1");
+                const thickerButton2 = document.getElementById("thicker-2");
+                const thinnerButton2 = document.getElementById("thinner-2");
 
                 function makeThicker() {
                     const currentBorder = getComputedStyle(root)
@@ -70,8 +74,10 @@
                     root.style.setProperty("--border", borderThickness);
                 }
 
-                thickerButton.addEventListener("click", makeThicker);
-                thinnerButton.addEventListener("click", makeThinner);
+                thickerButton1.addEventListener("click", makeThicker);
+                thinnerButton1.addEventListener("click", makeThinner);
+                thickerButton2.addEventListener("click", makeThicker);
+                thinnerButton2.addEventListener("click", makeThinner);
 
                 const words = [
                     '"Henlo."<br />&nbsp;- <strong style="color: #666666">Hallvard</strong>',
