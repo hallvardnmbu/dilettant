@@ -24,6 +24,8 @@
 
 :root {
     --border: 2px;
+    --gray: #eeeeee;
+    --darkgray: #666666;
 }
 
 body {
@@ -47,7 +49,7 @@ body {
     padding: 10px;
     border: var(--border) solid black;
     box-shadow:
-        5px 5px 0px #eeeeee,
+        5px 5px 0px var(--gray),
         5px 5px 0px var(--border) black;
     margin: 20px 0px;
 }
@@ -76,7 +78,7 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     box-shadow:
-        5px 5px 0px #eeeeee,
+        5px 5px 0px var(--gray),
         5px 5px 0px var(--border) black;
 }
 
@@ -86,13 +88,13 @@ footer {
 
 .dilettant h1 {
     font-weight: 800;
-    color: #eeeeee;
+    color: var(--gray);
     -webkit-text-stroke: max(min(calc(var(--border) - 0.5px), 2px), 1px) black;
 }
 
 .dilettant header {
     border: var(--border) solid black;
-    background-color: #eeeeee;
+    background-color: var(--gray);
     grid-column: 1 / -1;
     text-align: center;
 }
@@ -131,12 +133,23 @@ footer {
 
 .dilettant a {
     display: inline-block;
-    color: #666666;
+    color: var(--darkgray);
     font-weight: 700;
     text-decoration-thickness: min(var(--border), 2px);
 }
 
 .dilettant a:hover {
+    background-color: #cccccc;
+}
+
+.resume a {
+    display: inline-block;
+    color: var(--darkgray);
+    font-weight: 700;
+    text-decoration-thickness: min(var(--border), 2px);
+}
+
+.resume a:hover {
     background-color: #cccccc;
 }
 
@@ -146,11 +159,11 @@ footer {
     margin-right: 6px;
     overflow: hidden;
     box-shadow:
-        5px 5px 0px #eeeeee,
+        5px 5px 0px var(--gray),
         5px 5px 0px var(--border) black;
 }
 .dilettant section .header {
-    background-color: #eeeeee;
+    background-color: var(--gray);
     font-weight: 700;
     padding: 5px 10px;
 }
@@ -178,7 +191,7 @@ footer {
     border: var(--border) solid black;
     max-width: 450px;
     box-shadow:
-        10px 10px 0px #eeeeee,
+        10px 10px 0px var(--gray),
         10px 10px 0px var(--border) black;
     display: block;
     margin-left: auto;
@@ -188,7 +201,7 @@ footer {
 .dilettant hr {
     border: none;
     height: 5px;
-    background-color: #eeeeee;
+    background-color: var(--gray);
     border: var(--border) solid black;
     border-left: none;
     margin: 25px 0px;
@@ -214,7 +227,7 @@ footer {
     right: -28px;
     height: calc(100% - 33px);
     width: 5px;
-    background-color: #eeeeee;
+    background-color: var(--gray);
     border: var(--border) solid black;
 }
 
@@ -242,6 +255,72 @@ footer {
     display: none;
 }
 
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+table {
+    border-collapse: separate;
+}
+.title {
+    font-weight: 800;
+    border: none;
+}
+.subtitle {
+    font-weight: 400;
+}
+.title td {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+td {
+    padding: 5px;
+}
+.left,
+.right {
+    color: var(--darkgray);
+    vertical-align: top;
+    font-weight: 400;
+    border: 2px solid var(--gray);
+}
+#noborder {
+    border: none;
+}
+.right {
+    text-wrap: nowrap;
+    text-align: right;
+}
+.middle {
+    color: var(--darkgray);
+    background-color: var(--gray);
+    vertical-align: top;
+}
+.resume img {
+    border: var(--border) solid var(--darkgray);
+    max-width: 450px;
+    box-shadow:
+        10px 10px 0px var(--gray),
+        10px 10px 0px var(--border) var(--darkgray);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 800px) {
+    .left,
+    .right {
+        text-wrap: wrap;
+    }
+    .left,
+    .middle,
+    .right {
+        font-size: 0.8em;
+    }
+}
+
 @media (max-width: 680px) {
     .dilettant header {
         border: none;
@@ -259,13 +338,13 @@ footer {
     }
 
     .dilettant nav a:hover {
-        background-color: #eeeeee;
+        background-color: var(--gray);
         padding: 4px;
         border: var(--border) solid black;
     }
 
     .dilettant nav a.active {
-        background-color: #eeeeee;
+        background-color: var(--gray);
         padding: 4px;
         border: var(--border) solid black;
     }
@@ -308,8 +387,18 @@ footer {
         border: var(--border) solid black;
         max-width: 240px;
         box-shadow:
-            10px 10px 0px #eeeeee,
+            10px 10px 0px var(--gray),
             10px 10px 0px var(--border) black;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .resume img {
+        border: var(--border) solid var(--darkgray);
+        max-width: 240px;
+        box-shadow:
+            10px 10px 0px var(--gray),
+            10px 10px 0px var(--border) var(--darkgray);
         display: block;
         margin-left: auto;
         margin-right: auto;

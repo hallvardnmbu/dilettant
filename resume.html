@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resumé</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="dilettant">
+        <header>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="resume.html" class="active">Résumé</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+    </body>
+
+    <body class="resume">
+        <header class="top">
+            <div class="title">HALLVARD HØYLAND LAVIK<div/>
+        </header>
+
+        <div class="contact">
+            <p class="wide">
+                Brekkeveien 23 H0324 1430 Ås&nbsp;&nbsp·&nbsp;&nbsp+47 923 39 982
+            </p>
+            <p class="wide">
+                <a href="mailto:hallvardlavik@outlook.com" target="_blank"
+                    >hallvardlavik@outlook.com</a
+                >
+                ·
+                <a href="https://github.com/hallvardnmbu" target="_blank"
+                    >github/hallvardnmbu</a
+                >
+            </p>
+
+            <p class="long">Brekkeveien 23 apt. H0324</p>
+            <p class="long">
+                <span class="location">1430 Ås</span>
+                <span class="country">Norway</span>
+            </p>
+            <p class="long">
+                <span class="location">·</span>
+                <span class="location">·</span>
+                <span class="country">·</span>
+            </p>
+            <p class="long">+47 923 39 982</p>
+            <p class="long">·</p>
+            <p class="long">
+                <a href="mailto:hallvardlavik@outlook.com" target="_blank"
+                    >hallvardlavik@outlook.com</a
+                >
+            </p>
+            <p class="long">
+                <a href="https://github.com/hallvardnmbu" target="_blank"
+                    >github.com @ hallvardnmbu</a
+                >
+            </p>
+        </div>
+
+        <script>
+            function switchImage() {
+                var img = document.getElementById("image");
+                img.src = "./images/there-is-a-brain-inside.jpeg";
+            }
+
+            function revertImage() {
+                var img = document.getElementById("image");
+                img.src = "./images/hallvard.jpeg";
+            }
+        </script>
+
+        <img
+            id="image"
+            src="./images/hallvard.jpeg"
+            alt="Meg selv."
+            onmouseover="switchImage()"
+            onmouseout="revertImage()"
+        />
+
+        <table>
+            <tr class="title">
+                <td>UTDANNING</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="left">NMBU</td>
+                <td class="middle">
+                    Datavitenskap.<br />
+                    Integrert master i datavitenskap.<br />
+                    Spesialisering innenfor nevrofysikk.<br /><br />
+                    "Feedback connections in neural networks for layer reuse."<br />
+                    Hovedveileder: Kristian Hovde Liland<br />
+                    Biveileder: Hans Ekkehard Plesser
+                </td>
+                <td class="right">2022 – 2024 (d.d.)</td>
+            </tr>
+            <tr>
+                <td class="left">NMBU</td>
+                <td class="middle">
+                    Energi- og miljøfysikk.<br />
+                    Bachelor i fysikk.<br />
+                    Spesialisering innenfor datavitenskap.
+                </td>
+                <td class="right">2020 – 2024</td>
+            </tr>
+            <tr>
+                <td class="left">Stavanger Katedralskole</td>
+                <td class="middle">Studiespesialiserende.<br />Realfag.</td>
+                <td class="right">2017 – 2020</td>
+            </tr>
+
+            <tr class="title">
+                <td>PROSJEKTER</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://www.github.com/hallvardnmbu/neurons" target="_blank">neurons</a></td>
+                <td class="middle">
+                    Modulære nevrale nettverk fra scratch, i Rust.<br />
+                    Utviklet i sammenheng med masteroppgaven.<br />
+                    <a href="https://www.crates.io/crates/neurons" target="_blank">Crate</a>.<br />
+                    <a href="https://www.docs.rs/neurons/latest" target="_blank">Documentation</a>.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://www.github.com/hallvardnmbu/snubleJS" target="_blank">snubleJS</a></td>
+                <td class="middle">
+                    Applikasjon for å fremheve vinmonopolets prisendringer.<br />
+                    <a href="https://www.snublejuice.no" target="_blank">snublejuice.no</a>
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/snublejuice" target="_blank">snublejuice</a></td>
+                <td class="middle">
+                    Original, Python-version av <a href="https://github.com/hallvardnmbu/snubleJS" target="_blank">snubleJS</a>.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://www.github.com/hallvardnmbu/api" target="_blank">api</a></td>
+                <td class="middle">
+                    Guide for å sette opp, og (fjern-)verte en enkel API.<br />
+                    <a href="https://www.ind320.no" target="_blank">ind320.no</a>
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://www.github.com/hallvardnmbu/transformer" target="_blank">transformer</a></td>
+                <td class="middle">
+                    Spesialpensum ved NMBU.<br />
+                    Grundig gjennomgang av Transformer-modellen.<br />
+                    <a href="https://github.com/hallvardnmbu/transformer/blob/main/report.pdf" target="_blank">Rapport</a>.
+                </td>
+                <td class="right">02.2024 - 05.2024</td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://www.github.com/hallvardnmbu/reinforcement-learning" target="_blank">reinforcement-learning</a></td>
+                <td class="middle">
+                    Spesialpensum ved NMBU.<br />
+                    Grundig gjennomgang av reinforcement learning.<br />
+                    <a href="https://github.com/hallvardnmbu/reinforcement-learning/blob/main/report.pdf" target="_blank">Rapport</a>.
+                </td>
+                <td class="right">02.2024 - 05.2024</td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/pagame" target="_blank">pagame</a></td>
+                <td class="middle">
+                    Enkeltstående applikasjon for fest-leker.<br />
+                    GUI for å velge bort leker, styre musikk, og mere.<br />
+                    <a href="https://github.com/hallvardnmbu/pagame/tree/main/application" target="_blank">Last ned</a>.<br />
+                    <a href="https://pypi.org/project/pagame/" target="_blank">PyPi</a>.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://www.github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a></td>
+                <td class="middle">
+                    Enkel biologisk simulasjon av kjøtt- og planteetere.<br />
+                    Prosjektoppgave i INF200 ved NMBU.<br />
+                    Videreutviklet for bruk som undervisningsverktøy i ECOL100 ved NMBU.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/rcosystem" target="_blank">rcosystem</a></td>
+                <td class="middle">
+                    Rust implementasjon av <a href="https://www.github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a>.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/dashboard" target="_blank">dashboard</a></td>
+                <td class="middle">
+                    For IND320 ved NMBU.
+                </td>
+                <td class="right">08.2023 - 12.2023</td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/agrade" target="_blank">agrade</a></td>
+                <td class="middle">
+                    Webapplikasjon for å vurdere og gi tilbakemelding på studentoppgaver.<br />
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/localagi" target="_blank">localagi</a></td>
+                <td class="middle">
+                    Tullepakke for å simulere AGI.<br />
+                    <a href="https://pypi.org/project/localagi/" target="_blank">PyPi</a>.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+
+            <tr>
+                <td class="left"><a href="https://github.com/hallvardnmbu/hackathon" target="_blank">hackathon</a></td>
+                <td class="middle">
+                    Med Norges Bank Investment Management og Eik Lab; vinnere.
+                </td>
+                <td id="noborder" class="right"></td>
+            </tr>
+
+            <tr class="title">
+                <td>ERFARING</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="left">USBL</td>
+                <td class="middle">Styremedlem.<br />Borettslag.</td>
+                <td class="right">04.2023 – d.d.</td>
+            </tr>
+            <tr>
+                <td class="left">NAV & NMBU</td>
+                <td class="middle">Studentmentor.<br />Faglig hjelp for student med vansker.</td>
+                <td class="right">04.2023 – d.d.</td>
+            </tr>
+            <tr>
+                <td class="left">NMBU</td>
+                <td class="middle">
+                    Øvingslærer, henholdsvis fra toppen,<br />
+                    i fagene IND320, DAT200, INF201 og<br />
+                    (2x) INF120.
+                </td>
+                <td class="right">
+                    08.2024 – 12.2024<br />
+                    01.2024 – 05.2024<br />
+                    08.2023 – 12.2023<br />
+                    08.2023 – 12.2023<br />
+                    02.2022 – 05.2022
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Lyse Produksjon AS</td>
+                <td class="middle">Kraftanalytiker.<br />Sommerjobb.</td>
+                <td class="right">03.2023 – 08.2024</td>
+            </tr>
+            <tr>
+                <td class="left">NMBU</td>
+                <td class="middle">
+                    Programvareutvikler.<br />
+                    Simulasjonsverktøy for ECOL100<br />
+                    basert på INF200-prosjektoppgave.<br />
+                    <a href="https://github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a>.
+                </td>
+                <td class="right">09.2023 - 04.2024</td>
+            </tr>
+            <tr>
+                <td class="left">ISS</td>
+                <td class="middle">
+                    Renholdsmedarbeider.<br />
+                    Sommer- og helgevikar.
+                </td>
+                <td class="right">06.2019 – 02.2023</td>
+            </tr>
+            <tr>
+                <td class="left">NMBU</td>
+                <td class="middle">
+                    Studentvert.<br />
+                    Faglig og sosialt tilbud.
+                </td>
+                <td class="right">10.2022 – 01.2023</td>
+            </tr>
+            <tr>
+                <td class="left">Motehuset AS</td>
+                <td class="middle">
+                    Lagermedarbeider.<br />
+                    Deltidsansatt og sesongarbeid.<br />
+                    Loggføring og logistikk.
+                </td>
+                <td class="right">02.2018 – 06.2019</td>
+            </tr>
+
+            <tr class="title">
+                <td>FRIVILLIGHET</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="left">Studentsamfunnet i Ås</td>
+                <td class="middle">
+                    Komitésjef.<br />
+                    Markedsføring og inkludering.<br />
+                    Sjef over seks frivillige.
+                </td>
+                <td class="right">06.2021 – 05.2023</td>
+            </tr>
+            <tr>
+                <td class="left">NITO Studentene</td>
+                <td class="middle">Studentkontakt.<br />Markedsføring og arrangement.</td>
+                <td class="right">08.2022 – 03.2023</td>
+            </tr>
+            <tr>
+                <td class="left">UKA i Ås</td>
+                <td class="middle">Funksjonær.</td>
+                <td class="right">10.2020</td>
+            </tr>
+
+            <tr class="title">
+                <td>AKTIVITETER</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="left">NBIM</td>
+                <td class="middle">
+                    Vinner av hackathon.<br />
+                    Møte med Nicolai Tangen og omvisning av kontorene deres.<br />
+                    github.com/hallvardnmbu/hackathon
+                </td>
+                <td class="right">09.2023</td>
+            </tr>
+            <tr>
+                <td class="left">EnergiRike</td>
+                <td class="middle">
+                    Vinner av case.<br />
+                    Presentasjon av case-oppgaven ved EnergiRike-konferansen.
+                </td>
+                <td class="right">08.2023</td>
+            </tr>
+            <tr>
+                <td class="left">
+                    Studentsamskipnaden i Ås &<br />Helsestasjon for Ungdom og Studenter i Ås
+                </td>
+                <td class="middle">Lederkurs.</td>
+                <td class="right">20.09.2022</td>
+            </tr>
+        </table>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const root = document.documentElement;
+            const borderThickness = localStorage.getItem("borderThickness");
+            if (borderThickness) {
+                root.style.setProperty("--border", borderThickness);
+            }
+        });
+    </script>
+</html>
