@@ -4,38 +4,205 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Resumé</title>
-        <link rel="stylesheet" href="style.css" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+
+            :root {
+                --border: 2px;
+                --gray: #eeeeee;
+                --darkgray: #666666;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                /* background-color: var(--gray); */
+            }
+            body {
+                font-family: "JetBrains Mono", monospace;
+                display: grid;
+                grid-template-rows: auto 1fr;
+                grid-gap: 20px;
+                padding: 20px;
+                line-height: 1.2rem;
+                min-height: 95vh;
+            }
+            main.contact {
+                text-align: center;
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-bottom: 25px;
+            }
+            .contact p {
+                margin: 5px 0;
+            }
+            .contact span {
+                display: inline;
+            }
+            .wide {
+                display: block;
+            }
+            .long {
+                display: none;
+            }
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            header a {
+                color: black;
+                font-size: 1.3em;
+            }
+            header a:visited {
+                color: black;
+            }
+            table {
+                border-collapse: separate;
+            }
+            .title {
+                font-weight: 800;
+                border: none;
+            }
+            .subtitle {
+                font-weight: 400;
+            }
+            .title td {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+            td {
+                padding: 5px;
+            }
+            .left,
+            .right {
+                color: var(--darkgray);
+                vertical-align: top;
+                font-weight: 400;
+                border: 2px solid var(--gray);
+            }
+            #noborder {
+                border: none;
+            }
+            .right {
+                text-wrap: nowrap;
+                text-align: right;
+            }
+            .middle {
+                color: var(--darkgray);
+                background-color: var(--gray);
+                vertical-align: top;
+            }
+            img {
+                border: var(--border) solid var(--darkgray);
+                max-width: 450px;
+                box-shadow:
+                    10px 10px 0px var(--gray),
+                    10px 10px 0px var(--border) var(--darkgray);
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            a {
+                display: inline-block;
+                color: var(--darkgray);
+                font-weight: 700;
+                text-decoration-thickness: min(var(--border), 2px);
+            }
+            a:hover {
+                background-color: #cccccc;
+            }
+
+            @media (max-width: 800px) {
+                table,
+                tr,
+                td {
+                    display: block;
+                }
+                table {
+                    width: 80%;
+                    margin: auto;
+                    /* margin-top: 20px; */
+                }
+                tr {
+                    border-left: 5px solid var(--gray);
+                    padding-left: 10px;
+                }
+                td {
+                    margin: var(--border);
+                }
+                .title {
+                    padding-top: 20px;
+                    font-weight: 800;
+                    border: none;
+                }
+                .subtitle {
+                    font-weight: 400;
+                }
+                .title td {
+                    padding: 0;
+                }
+                td {
+                    padding: 5px;
+                }
+                tr {
+                    margin-bottom: 10px;
+                    /* border: 1px solid #ddd;
+                    padding: 10px; */
+                }
+
+                .left {
+                    font-weight: 800;
+                }
+                .left,
+                .right {
+                    text-wrap: wrap;
+                }
+                .left,
+                .middle,
+                .right {
+                    font-size: 0.8em;
+                }
+
+                img {
+                    max-width: 240px;
+                }
+
+                .wide {
+                    display: none;
+                }
+                .long {
+                    display: flex;
+                    justify-content: center;
+                    min-width: 240px;
+                }
+                .location {
+                    margin-right: auto;
+                }
+            }
+        </style>
     </head>
-    <body class="dilettant">
-        <header>
-            <nav>
-                <a href="home.html">Home</a>
-                <a href="resume.html" class="active">Résumé</a>
-                <a href="projects.html">Projects</a>
-                <a href="experience.html">Experience</a>
-                <a href="education.html">Education</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
-    </body>
 
     <body class="resume">
-        <header class="top">
-            <div class="title">HALLVARD HØYLAND LAVIK<div/>
+        <header>
+            <a href="home.html">HALLVARD HØYLAND LAVIK</a>
         </header>
 
         <div class="contact">
-            <p class="wide">
-                Brekkeveien 23 H0324 1430 Ås&nbsp;&nbsp·&nbsp;&nbsp+47 923 39 982
-            </p>
+            <p class="wide">Brekkeveien 23 H0324 1430 Ås&nbsp;&nbsp·&nbsp;&nbsp+47 923 39 982</p>
             <p class="wide">
                 <a href="mailto:hallvardlavik@outlook.com" target="_blank"
                     >hallvardlavik@outlook.com</a
                 >
                 ·
-                <a href="https://github.com/hallvardnmbu" target="_blank"
-                    >github/hallvardnmbu</a
-                >
+                <a href="https://github.com/hallvardnmbu" target="_blank">github/hallvardnmbu</a>
             </p>
 
             <p class="long">Brekkeveien 23 apt. H0324</p>
@@ -121,7 +288,11 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://www.github.com/hallvardnmbu/neurons" target="_blank">neurons</a></td>
+                <td class="left">
+                    <a href="https://www.github.com/hallvardnmbu/neurons" target="_blank"
+                        >neurons</a
+                    >
+                </td>
                 <td class="middle">
                     Modulære nevrale nettverk fra scratch, i Rust.<br />
                     Utviklet i sammenheng med masteroppgaven.<br />
@@ -131,7 +302,11 @@
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://www.github.com/hallvardnmbu/snubleJS" target="_blank">snubleJS</a></td>
+                <td class="left">
+                    <a href="https://www.github.com/hallvardnmbu/snubleJS" target="_blank"
+                        >snubleJS</a
+                    >
+                </td>
                 <td class="middle">
                     Applikasjon for å fremheve vinmonopolets prisendringer.<br />
                     <a href="https://www.snublejuice.no" target="_blank">snublejuice.no</a>
@@ -139,14 +314,21 @@
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/snublejuice" target="_blank">snublejuice</a></td>
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/snublejuice" target="_blank"
+                        >snublejuice</a
+                    >
+                </td>
                 <td class="middle">
-                    Original, Python-version av <a href="https://github.com/hallvardnmbu/snubleJS" target="_blank">snubleJS</a>.
+                    Original, Python-version av
+                    <a href="https://github.com/hallvardnmbu/snubleJS" target="_blank">snubleJS</a>.
                 </td>
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://www.github.com/hallvardnmbu/api" target="_blank">api</a></td>
+                <td class="left">
+                    <a href="https://www.github.com/hallvardnmbu/api" target="_blank">api</a>
+                </td>
                 <td class="middle">
                     Guide for å sette opp, og (fjern-)verte en enkel API.<br />
                     <a href="https://www.ind320.no" target="_blank">ind320.no</a>
@@ -154,35 +336,63 @@
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://www.github.com/hallvardnmbu/transformer" target="_blank">transformer</a></td>
+                <td class="left">
+                    <a href="https://www.github.com/hallvardnmbu/transformer" target="_blank"
+                        >transformer</a
+                    >
+                </td>
                 <td class="middle">
                     Spesialpensum ved NMBU.<br />
                     Grundig gjennomgang av Transformer-modellen.<br />
-                    <a href="https://github.com/hallvardnmbu/transformer/blob/main/report.pdf" target="_blank">Rapport</a>.
+                    <a
+                        href="https://github.com/hallvardnmbu/transformer/blob/main/report.pdf"
+                        target="_blank"
+                        >Rapport</a
+                    >.
                 </td>
                 <td class="right">02.2024 - 05.2024</td>
             </tr>
             <tr>
-                <td class="left"><a href="https://www.github.com/hallvardnmbu/reinforcement-learning" target="_blank">reinforcement-learning</a></td>
+                <td class="left">
+                    <a
+                        href="https://www.github.com/hallvardnmbu/reinforcement-learning"
+                        target="_blank"
+                        >reinforcement-learning</a
+                    >
+                </td>
                 <td class="middle">
                     Spesialpensum ved NMBU.<br />
                     Grundig gjennomgang av reinforcement learning.<br />
-                    <a href="https://github.com/hallvardnmbu/reinforcement-learning/blob/main/report.pdf" target="_blank">Rapport</a>.
+                    <a
+                        href="https://github.com/hallvardnmbu/reinforcement-learning/blob/main/report.pdf"
+                        target="_blank"
+                        >Rapport</a
+                    >.
                 </td>
                 <td class="right">02.2024 - 05.2024</td>
             </tr>
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/pagame" target="_blank">pagame</a></td>
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/pagame" target="_blank">pagame</a>
+                </td>
                 <td class="middle">
                     Enkeltstående applikasjon for fest-leker.<br />
                     GUI for å velge bort leker, styre musikk, og mere.<br />
-                    <a href="https://github.com/hallvardnmbu/pagame/tree/main/application" target="_blank">Last ned</a>.<br />
+                    <a
+                        href="https://github.com/hallvardnmbu/pagame/tree/main/application"
+                        target="_blank"
+                        >Last ned</a
+                    >.<br />
                     <a href="https://pypi.org/project/pagame/" target="_blank">PyPi</a>.
                 </td>
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://www.github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a></td>
+                <td class="left">
+                    <a href="https://www.github.com/hallvardnmbu/ecosystem" target="_blank"
+                        >ecosystem</a
+                    >
+                </td>
                 <td class="middle">
                     Enkel biologisk simulasjon av kjøtt- og planteetere.<br />
                     Prosjektoppgave i INF200 ved NMBU.<br />
@@ -191,28 +401,41 @@
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/rcosystem" target="_blank">rcosystem</a></td>
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/rcosystem" target="_blank"
+                        >rcosystem</a
+                    >
+                </td>
                 <td class="middle">
-                    Rust implementasjon av <a href="https://www.github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a>.
+                    Rust implementasjon av
+                    <a href="https://www.github.com/hallvardnmbu/ecosystem" target="_blank"
+                        >ecosystem</a
+                    >.
                 </td>
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/dashboard" target="_blank">dashboard</a></td>
-                <td class="middle">
-                    For IND320 ved NMBU.
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/dashboard" target="_blank"
+                        >dashboard</a
+                    >
                 </td>
+                <td class="middle">For IND320 ved NMBU.</td>
                 <td class="right">08.2023 - 12.2023</td>
             </tr>
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/agrade" target="_blank">agrade</a></td>
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/agrade" target="_blank">agrade</a>
+                </td>
                 <td class="middle">
                     Webapplikasjon for å vurdere og gi tilbakemelding på studentoppgaver.<br />
                 </td>
                 <td id="noborder" class="right"></td>
             </tr>
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/localagi" target="_blank">localagi</a></td>
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/localagi" target="_blank">localagi</a>
+                </td>
                 <td class="middle">
                     Tullepakke for å simulere AGI.<br />
                     <a href="https://pypi.org/project/localagi/" target="_blank">PyPi</a>.
@@ -221,10 +444,12 @@
             </tr>
 
             <tr>
-                <td class="left"><a href="https://github.com/hallvardnmbu/hackathon" target="_blank">hackathon</a></td>
-                <td class="middle">
-                    Med Norges Bank Investment Management og Eik Lab; vinnere.
+                <td class="left">
+                    <a href="https://github.com/hallvardnmbu/hackathon" target="_blank"
+                        >hackathon</a
+                    >
                 </td>
+                <td class="middle">Med Norges Bank Investment Management og Eik Lab; vinnere.</td>
                 <td id="noborder" class="right"></td>
             </tr>
 
@@ -269,7 +494,8 @@
                     Programvareutvikler.<br />
                     Simulasjonsverktøy for ECOL100<br />
                     basert på INF200-prosjektoppgave.<br />
-                    <a href="https://github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a>.
+                    <a href="https://github.com/hallvardnmbu/ecosystem" target="_blank">ecosystem</a
+                    >.
                 </td>
                 <td class="right">09.2023 - 04.2024</td>
             </tr>

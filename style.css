@@ -142,17 +142,6 @@ footer {
     background-color: #cccccc;
 }
 
-.resume a {
-    display: inline-block;
-    color: var(--darkgray);
-    font-weight: 700;
-    text-decoration-thickness: min(var(--border), 2px);
-}
-
-.resume a:hover {
-    background-color: #cccccc;
-}
-
 .dilettant section {
     border: var(--border) solid black;
     margin: 20px 0px;
@@ -253,60 +242,6 @@ footer {
 }
 .long {
     display: none;
-}
-
-.top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-table {
-    border-collapse: separate;
-}
-.title {
-    font-weight: 800;
-    border: none;
-}
-.subtitle {
-    font-weight: 400;
-}
-.title td {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-td {
-    padding: 5px;
-}
-.left,
-.right {
-    color: var(--darkgray);
-    vertical-align: top;
-    font-weight: 400;
-    border: 2px solid var(--gray);
-}
-#noborder {
-    border: none;
-}
-.right {
-    text-wrap: nowrap;
-    text-align: right;
-}
-.middle {
-    color: var(--darkgray);
-    background-color: var(--gray);
-    vertical-align: top;
-}
-.resume img {
-    border: var(--border) solid var(--darkgray);
-    max-width: 450px;
-    box-shadow:
-        10px 10px 0px var(--gray),
-        10px 10px 0px var(--border) var(--darkgray);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 @media (max-width: 800px) {
