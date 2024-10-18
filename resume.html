@@ -12,24 +12,32 @@
                 --gray: #eeeeee;
                 --darkgray: #666666;
             }
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                /* background-color: var(--gray); */
-            }
             body {
                 font-family: "JetBrains Mono", monospace;
                 display: grid;
                 grid-template-rows: auto 1fr;
                 grid-gap: 20px;
                 padding: 20px;
-                line-height: 1.2rem;
+                line-height: 1.1rem;
                 min-height: 95vh;
+                color: var(--darkgray);
             }
-            main.contact {
+            main .contact {
                 text-align: center;
+            }
+            nav {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                padding: 10px;
+                gap: 5px;
+                border: 2px solid var(--gray);
+            }
+            nav a {
+                color: black;
+                font-size: 0.8em;
             }
             .contact {
                 display: flex;
@@ -68,6 +76,7 @@
                 border-collapse: separate;
             }
             .title {
+                color: black;
                 font-weight: 800;
                 border: none;
             }
@@ -90,6 +99,7 @@
             }
             #noborder {
                 border: none;
+                display: none;
             }
             .right {
                 text-wrap: nowrap;
@@ -121,22 +131,21 @@
             }
 
             @media (max-width: 800px) {
-                table,
-                tr,
-                td {
-                    display: block;
-                }
-                table {
-                    width: 80%;
-                    margin: auto;
-                    /* margin-top: 20px; */
-                }
                 tr {
+                    display: block;
                     border-left: 5px solid var(--gray);
                     padding-left: 10px;
+                    margin-bottom: 10px;
                 }
                 td {
-                    margin: var(--border);
+                    display: block;
+                    margin: 0;
+                    padding: 5px;
+                    margin-top: 2px;
+                }
+                .title td {
+                    padding: 0;
+                    margin-top: 20px;
                 }
                 .title {
                     padding-top: 20px;
@@ -145,17 +154,6 @@
                 }
                 .subtitle {
                     font-weight: 400;
-                }
-                .title td {
-                    padding: 0;
-                }
-                td {
-                    padding: 5px;
-                }
-                tr {
-                    margin-bottom: 10px;
-                    /* border: 1px solid #ddd;
-                    padding: 10px; */
                 }
 
                 .left {
@@ -249,8 +247,16 @@
             onmouseout="revertImage()"
         />
 
+        <nav>
+            <a href="#utdanning">Utdanning</a>
+            <a href="#prosjekter">Prosjekter</a>
+            <a href="#erfaring">Erfaring</a>
+            <a href="#frivillighet">Frivillighet</a>
+            <a href="#aktiviteter">Aktiviteter</a>
+        </nav>
+
         <table>
-            <tr class="title">
+            <tr class="title" id="utdanning">
                 <td>UTDANNING</td>
                 <td></td>
                 <td></td>
@@ -261,11 +267,17 @@
                     Datavitenskap.<br />
                     Integrert master i datavitenskap.<br />
                     Spesialisering innenfor nevrofysikk.<br /><br />
-                    "Feedback connections in neural networks for layer reuse."<br />
-                    Hovedveileder: Kristian Hovde Liland<br />
-                    Biveileder: Hans Ekkehard Plesser
+
+                    <i>Feedback connections in neural networks for layer reuse.</i><br />
+                    &nbsp;Veiledere:<br />
+                    &nbsp;Hoved:
+                    <a href="https://khliland.no" target="_blank">Kristian Hovde Liland</a><br />
+                    &nbsp;Bi:
+                    <a href="https://arken.nmbu.no/~plesser/" target="_blank"
+                        >Hans Ekkehard Plesser</a
+                    >
                 </td>
-                <td class="right">2022 – 2024 (d.d.)</td>
+                <td class="right">2022 – 12.2024</td>
             </tr>
             <tr>
                 <td class="left">NMBU</td>
@@ -282,7 +294,7 @@
                 <td class="right">2017 – 2020</td>
             </tr>
 
-            <tr class="title">
+            <tr class="title" id="prosjekter">
                 <td>PROSJEKTER</td>
                 <td></td>
                 <td></td>
@@ -297,7 +309,7 @@
                     Modulære nevrale nettverk fra scratch, i Rust.<br />
                     Utviklet i sammenheng med masteroppgaven.<br />
                     <a href="https://www.crates.io/crates/neurons" target="_blank">Crate</a>.<br />
-                    <a href="https://www.docs.rs/neurons/latest" target="_blank">Documentation</a>.
+                    <a href="https://www.docs.rs/neurons/latest" target="_blank">Dokumentasjon</a>.
                 </td>
                 <td id="noborder" class="right"></td>
             </tr>
@@ -453,7 +465,7 @@
                 <td id="noborder" class="right"></td>
             </tr>
 
-            <tr class="title">
+            <tr class="title" id="erfaring">
                 <td>ERFARING</td>
                 <td></td>
                 <td></td>
@@ -466,7 +478,7 @@
             <tr>
                 <td class="left">NAV & NMBU</td>
                 <td class="middle">Studentmentor.<br />Faglig hjelp for student med vansker.</td>
-                <td class="right">04.2023 – d.d.</td>
+                <td class="right">04.2023 – 12.2024</td>
             </tr>
             <tr>
                 <td class="left">NMBU</td>
@@ -525,7 +537,7 @@
                 <td class="right">02.2018 – 06.2019</td>
             </tr>
 
-            <tr class="title">
+            <tr class="title" id="frivillighet">
                 <td>FRIVILLIGHET</td>
                 <td></td>
                 <td></td>
@@ -550,7 +562,7 @@
                 <td class="right">10.2020</td>
             </tr>
 
-            <tr class="title">
+            <tr class="title" id="aktiviteter">
                 <td>AKTIVITETER</td>
                 <td></td>
                 <td></td>
@@ -560,7 +572,7 @@
                 <td class="middle">
                     Vinner av hackathon.<br />
                     Møte med Nicolai Tangen og omvisning av kontorene deres.<br />
-                    github.com/hallvardnmbu/hackathon
+                    <a href="https://github.com/hallvardnmbu/hackathon" target="_blank">Kode</a>.
                 </td>
                 <td class="right">09.2023</td>
             </tr>
