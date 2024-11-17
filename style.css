@@ -256,7 +256,7 @@ footer {
     }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 730px) {
     .dilettant header {
         border: none;
         background-color: white;
