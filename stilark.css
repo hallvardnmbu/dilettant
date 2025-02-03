@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./font/Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url("./font/Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+:root {
+    --border: 2px;
+    --padding: 10px;
+
+    --background: #ffffff;
+    --contrast: #b2b2b2;
+    --text: #000000;
+
+    --link: #3366cc;
+    --hover: #cc9933;
+}
+
+body {
+    font-family: "JetBrainsMono", monospace;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+
+    color: var(--text);
+    background-color: var(--background);
+
+    display: grid;
+    grid-gap: calc(2 * var(--padding));
+    padding: calc(2 * var(--padding));
+}
+
+a,
+a:visited {
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover,
+a.active {
+    color: var(--hover);
+}
+
+main {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-top: calc(5 * var(--padding));
+}
+h1:first-of-type {
+    padding-top: var(--padding);
+}
+
+section {
+    margin: calc(2 * var(--padding)) 0;
+    border-left: var(--border) solid var(--contrast);
+}
+section span {
+    display: inline-block;
+
+    color: var(--contrast);
+    border-bottom: var(--border) solid var(--contrast);
+
+    padding: 0 var(--padding) calc(0.5 * var(--padding)) var(--padding);
+}
+section div {
+    background: none;
+    padding-left: var(--padding);
+}
+section div h2 {
+    font-size: inherit;
+    font-weight: 700;
+
+    margin: 0;
+    padding: 0 0 calc(0.5 * var(--padding)) 0;
+}
+section hr {
+    border: none;
+    height: calc(0.5 * var(--padding));
+    margin: 0;
+}
+
+img {
+    border: var(--border) solid var(--link);
+    max-width: calc(240px - 6 * var(--border));
+    padding: calc(2 * var(--border));
+}
