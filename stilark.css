@@ -11,7 +11,10 @@
 
 :root {
     --border: 2px;
-    --padding: 10px;
+    --padding: 5px;
+    --gap: 10px;
+    --heading: 155px;
+    --content: 600px;
 
     --background: #ffffff;
     --contrast: #b2b2b2;
@@ -25,18 +28,49 @@ body {
     font-family: "JetBrainsMono", monospace;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.2rem;
+    line-height: 1.5rem;
 
     color: var(--text);
     background-color: var(--background);
 
-    display: grid;
-    grid-gap: calc(2 * var(--padding));
-    padding: calc(2 * var(--padding));
+    padding: calc(2 * var(--gap)) 0;
+}
+main {
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: var(--content);
+}
+html {
+    scrollbar-gutter: stable;
+}
+header,
+main menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+
+    padding: 0;
+    margin: 0;
+}
+main menu div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+
+    width: inherit;
+}
+main menu div > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 a,
 a:visited {
+    display: inline-block;
+
     color: var(--link);
     text-decoration: none;
 }
@@ -45,47 +79,55 @@ a.active {
     color: var(--hover);
 }
 
-main {
-    grid-column: 1 / -1;
-    text-align: left;
-}
-
 h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    padding-top: calc(5 * var(--padding));
+
+    padding-top: calc(5 * var(--gap));
 }
 h1:first-of-type {
-    padding-top: var(--padding);
+    padding-top: var(--gap);
+}
+
+p,
+h2 {
+    margin: 0;
+    padding: 0;
 }
 
 section {
-    margin: calc(2 * var(--padding)) 0;
+    position: relative;
+
+    padding-left: calc(var(--heading) + 2 * var(--gap));
+    margin: calc(2 * var(--gap)) 0;
+}
+section > * {
+    padding-left: var(--padding);
     border-left: var(--border) solid var(--contrast);
+}
+h2 {
+    font-size: inherit;
+    font-weight: 700;
+
+    position: absolute;
+    left: 0;
+
+    margin: 0;
+    padding: 0;
+
+    width: var(--heading);
+    word-wrap: break-word;
+    border-left: none;
 }
 section span {
     display: inline-block;
 
-    color: var(--contrast);
-    border-bottom: var(--border) solid var(--contrast);
+    color: var(--background);
 
-    padding: 0 var(--padding) calc(0.5 * var(--padding)) var(--padding);
-}
-section div {
-    background: none;
-    padding-left: var(--padding);
-}
-section div h2 {
-    font-size: inherit;
-    font-weight: 700;
+    background-color: var(--contrast);
 
-    margin: 0;
-    padding: 0 0 calc(0.5 * var(--padding)) 0;
-}
-section hr {
-    border: none;
-    height: calc(0.5 * var(--padding));
-    margin: 0;
+    border-left: none;
+    padding: 0 calc(var(--padding) + var(--border)) 0 calc(var(--padding) + var(--border));
 }
 
 img {

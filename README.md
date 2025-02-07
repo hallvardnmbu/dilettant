@@ -1,1 +1,1 @@
-Static code for my [personal website](https://dilettant.no).
+Statisk kode for min egen [hjemmeside](https://dilettant.no).

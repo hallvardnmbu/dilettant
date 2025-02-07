@@ -9,7 +9,7 @@ $path = array_filter($path);
 
 // If the path is empty, serve the home page
 if (empty($path)) {
-    $page = "kontakt.html";
+    $page = "meg.html";
 } else {
     // Get the last element of the path (filename)
     $page = end($path);
@@ -19,6 +19,6 @@ if (empty($path)) {
 if (file_exists($page)) {
     include $page;
 } else {
-    include "kontakt.html";
+    include "meg.html";
 }
 ?>

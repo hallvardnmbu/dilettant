@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nb">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hallvard H. Lavik</title>
+        <link rel="stylesheet" href="stilark.css" />
+        <link rel="icon" href="./images/hallvard.jpeg" type="image/jpeg" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="meg.html" class="active">Meg</a>
+                •
+                <a href="kode.html">Kode</a>
+                •
+                <a href="jobb.html">Jobb</a>
+                •
+                <a href="skole.html">Skole</a>
+            </nav>
+        </header>
+
+        <main>
+            <menu>
+                <nav>
+                    <a href="https://snublejuice.no">snublejuice</a>
+                    &nbsp;&nbsp;•&nbsp;&nbsp;
+                    <a href="https://dagsord.no">dagsord</a>
+                </nav>
+
+                <img
+                    id="image"
+                    src="./images/hallvard.jpeg"
+                    alt="Meg selv."
+                    onmouseover="switchImage()"
+                    onmouseout="revertImage()"
+                />
+
+                <div>
+                    <div>
+                        <p>Hallvard</p>
+                        <p>Høyland</p>
+                        <p>Lavik</p>
+                    </div>
+                    <div>
+                        <p>Veritashammaren 43</p>
+                        <p>H0102</p>
+                    </div>
+                    <div>
+                        <p>4007 Stavanger</p>
+                        <a href="tel:+4792339982">923 39 982</a>
+                    </div>
+                    <div>
+                        <a href="mailto:hallvardlavik@outlook.com" target="_blank"
+                            >hallvardlavik@outlook.com</a
+                        >
+                    </div>
+                    <div>
+                        <a href="https://github.com/hallvardnmbu" target="_blank"
+                            >github.com @ hallvardnmbu</a
+                        >
+                    </div>
+                </div>
+            </menu>
+
+            <script>
+                function switchImage() {
+                    var img = document.getElementById("image");
+                    img.src = "./images/there-is-a-brain-inside.jpeg";
+                    img.style.border = "var(--border) solid var(--hover)";
+                }
+
+                function revertImage() {
+                    var img = document.getElementById("image");
+                    img.src = "./images/hallvard.jpeg";
+                    img.style.border = "var(--border) solid var(--link)";
+                }
+            </script>
+        </main>
+    </body>
+</html>

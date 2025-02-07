@@ -9,8 +9,8 @@ RewriteRule ^(.*)$ $1.html [L]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
-# Redirect kontakt.html to root
-RewriteRule ^kontakt\.html$ / [R=301,L]
+# Redirect meg.html to root
+RewriteRule ^meg\.html$ / [R=301,L]
 
 # Ensure https
 RewriteCond %{HTTPS} off
@@ -20,7 +20,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
-# Route nonexistent files to kontakt.html
+# Route nonexistent files to meg.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^.*$ /kontakt.html [L]
+RewriteRule ^.*$ /meg.html [L]
