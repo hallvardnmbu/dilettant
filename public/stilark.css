@@ -1,11 +1,11 @@
 @font-face {
     font-family: "JetBrainsMono";
-    src: url("./font/Regular.woff2") format("woff2");
+    src: url("/font/Regular.woff2") format("woff2");
     font-weight: 400;
 }
 @font-face {
     font-family: "JetBrainsMono";
-    src: url("./font/Bold.woff2") format("woff2");
+    src: url("/font/Bold.woff2") format("woff2");
     font-weight: 700;
 }
 

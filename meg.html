@@ -4,19 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hallvard H. Lavik</title>
-        <link rel="stylesheet" href="stilark.css" />
-        <link rel="icon" href="./images/hallvard.jpeg" type="image/jpeg" />
+        <link rel="stylesheet" href="/stilark.css" />
+        <link rel="icon" href="/images/hallvard.jpeg" type="image/jpeg" />
     </head>
     <body>
         <header>
             <nav>
-                <a href="meg.html" class="active">Meg</a>
+                <a href="https://dilettant.no/meg" class="active">Meg</a>
                 •
-                <a href="kode.html">Kode</a>
+                <a href="https://dilettant.no/kode">Kode</a>
                 •
-                <a href="jobb.html">Jobb</a>
+                <a href="https://dilettant.no/jobb">Jobb</a>
                 •
-                <a href="skole.html">Skole</a>
+                <a href="https://dilettant.no/skole">Skole</a>
             </nav>
         </header>
 
@@ -30,7 +30,7 @@
 
                 <img
                     id="image"
-                    src="./images/hallvard.jpeg"
+                    src="/images/hallvard.jpeg"
                     alt="Meg selv."
                     onmouseover="switchImage()"
                     onmouseout="revertImage()"
@@ -66,13 +66,13 @@
             <script>
                 function switchImage() {
                     var img = document.getElementById("image");
-                    img.src = "./images/there-is-a-brain-inside.jpeg";
+                    img.src = "/images/there-is-a-brain-inside.jpeg";
                     img.style.border = "var(--border) solid var(--hover)";
                 }
 
                 function revertImage() {
                     var img = document.getElementById("image");
-                    img.src = "./images/hallvard.jpeg";
+                    img.src = "/images/hallvard.jpeg";
                     img.style.border = "var(--border) solid var(--link)";
                 }
             </script>

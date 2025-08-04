@@ -1,0 +1,13 @@
+{
+  "name": "elektron",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch app.js",
+    "start": "bun run app.js"
+  },
+  "dependencies": {
+    "elysia": "^0.8.17",
+    "@elysiajs/static": "^0.8.1"
+  }
+}
