@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nb">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kamerat</title>
+        <link rel="stylesheet" href="public/stilark.css" />
+        <link rel="icon" href="/images/hallvard.jpeg" type="image/jpeg" />
+        <style>
+            video,
+            canvas {
+                position: fixed;
+                opacity: 0;
+                pointer-events: none;
+            }
+            #ascii {
+                text-align: center;
+                font-size: 8px;
+                line-height: 0.5;
+                letter-spacing: -1.5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="https://dilettant.no/meg">Meg</a>
+                •
+                <a href="https://dilettant.no/kode">Kode</a>
+                •
+                <a href="https://dilettant.no/jobb">Jobb</a>
+                •
+                <a href="https://dilettant.no/skole">Skole</a>
+            </nav>
+        </header>
+
+        <main>
+            <video id="v" playsinline autoplay></video>
+            <canvas id="c"></canvas>
+
+            <br />
+
+            <pre id="ascii"></pre>
+        </main>
+
+        <script>
+            const v = document.getElementById("v");
+            const c = document.getElementById("c");
+            const ascii = document.getElementById("ascii");
+            const ctx = c.getContext("2d", { willReadFrequently: true });
+
+            const FPS = 30;
+            const W = 120;
+            const H = 90;
+            c.width = W;
+            c.height = H;
+
+            const chars = " `.-_:'\"~;*!/r(l1Z4)J+?vu#m&w@%";
+            const size = chars.length - 1;
+
+            navigator.mediaDevices
+                .getUserMedia({
+                    video: {
+                        width: { exact: W },
+                        height: { exact: H },
+                        frameRate: { max: FPS },
+                    },
+                })
+                .then((stream) => {
+                    v.srcObject = stream;
+                    v.addEventListener("play", () => {
+                        setInterval(() => {
+                            ctx.drawImage(v, 0, 0, W, H);
+                            const p = ctx.getImageData(0, 0, W, H).data;
+
+                            let image = "";
+                            for (let y = 0; y < H; y++) {
+                                for (let x = 0; x < W; x++) {
+                                    const i = (y * W + x) * 4;
+                                    const brightness = (p[i] + p[i + 1] + p[i + 2]) / 3;
+                                    image += chars[Math.floor((1 - brightness / 255) * size)];
+                                }
+                                image += "\n";
+                            }
+                            ascii.textContent = image;
+                        }, 1000 / FPS);
+                    });
+                })
+                .catch((err) => {});
+        </script>
+    </body>
+</html>
