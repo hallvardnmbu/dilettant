@@ -15,6 +15,7 @@
     --gap: 10px;
     --heading: 155px;
     --content: 600px;
+    --image: 230px;
 
     --background: #ffffff;
     --contrast: #b2b2b2;
@@ -24,6 +25,9 @@
     --hover: #cc9933;
 }
 
+html {
+    scrollbar-gutter: stable;
+}
 body {
     font-family: "JetBrainsMono", monospace;
     font-size: 1rem;
@@ -34,45 +38,53 @@ body {
     background-color: var(--background);
 
     padding: calc(2 * var(--gap)) 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 main {
-    margin-left: auto;
-    margin-right: auto;
-
     max-width: var(--content);
 }
-html {
-    scrollbar-gutter: stable;
-}
+
 header,
 main menu {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: var(--gap);
-
     padding: 0;
     margin: 0;
-}
-main menu div {
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding);
 
-    width: inherit;
+    width: var(--image);
 }
-main menu div > * {
+main menu.long {
+    width: unset;
+}
+nav,
+main menu a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--border);
+}
+main menu.long nav {
+    justify-content: center;
+    gap: var(--gap);
+}
+img {
+    padding: var(--padding);
+    border: var(--border) solid var(--link);
+
+    --size: calc(var(--image) - 2 * var(--padding) - 2 * var(--border));
+    height: var(--size);
+    width: var(--size);
 }
 
 a,
 a:visited {
-    display: inline-block;
-
     color: var(--link);
     text-decoration: none;
+    display: inline-block;
 }
 a:hover,
 a.active {
@@ -129,11 +141,6 @@ section span {
     background-color: var(--contrast);
 
     border-left: none;
-    padding: 0 calc(var(--padding) + var(--border)) 0 calc(var(--padding) + var(--border));
-}
-
-img {
-    border: var(--border) solid var(--link);
-    max-width: calc(240px - 6 * var(--border));
-    padding: calc(2 * var(--border));
+    padding: 0 calc(var(--padding) + var(--border)) 0
+        calc(var(--padding) + var(--border));
 }

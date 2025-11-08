@@ -10,13 +10,10 @@
     <body>
         <header>
             <nav>
-                <a href="https://dilettant.no/meg" class="active">Meg</a>
-                •
-                <a href="https://dilettant.no/kode">Kode</a>
-                •
-                <a href="https://dilettant.no/jobb">Jobb</a>
-                •
-                <a href="https://dilettant.no/skole">Skole</a>
+                <a href="/meg" class="active">Meg</a>
+                <a href="/kode">Kode</a>
+                <a href="/jobb">Jobb</a>
+                <a href="/skole">Skole</a>
             </nav>
         </header>
 
@@ -24,7 +21,6 @@
             <menu>
                 <nav>
                     <a href="https://snublejuice.no">snublejuice</a>
-                    &nbsp;&nbsp;•&nbsp;&nbsp;
                     <a href="https://dagsord.no">dagsord</a>
                 </nav>
 
@@ -36,44 +32,33 @@
                     onmouseout="revertImage()"
                 />
 
-                <div>
-                    <div>
-                        <p>Hallvard</p>
-                        <p>Høyland</p>
-                        <p>Lavik</p>
-                    </div>
-                    <div>
-                        <p>Veritashammaren 43</p>
-                        <p>H0102</p>
-                    </div>
-                    <div>
-                        <p>4007 Stavanger</p>
-                        <a href="tel:+4792339982">923 39 982</a>
-                    </div>
-                    <div>
-                        <a href="mailto:hallvardlavik@outlook.com" target="_blank"
-                            >hallvardlavik@outlook.com</a
-                        >
-                    </div>
-                    <div>
-                        <a href="https://github.com/hallvardnmbu" target="_blank"
-                            >github.com @ hallvardnmbu</a
-                        >
-                    </div>
-                </div>
+                <a href="mailto:hallvardlavik@outlook.com" target="_blank">
+                    <span>Hallvard</span>
+                    <span>Høyland</span>
+                    <span>Lavik</span></a
+                >
+                <a href="https://github.com/hallvardnmbu" target="_blank"
+                    ><span>github.com</span><span>@</span
+                    ><span>hallvardnmbu</span></a
+                >
+                <a
+                    href="https://github.com/hallvardnmbu/dotfiles"
+                    target="_blank"
+                    ><marquee behavior="alternate">•••</marquee></a
+                >
             </menu>
 
             <script>
                 function switchImage() {
                     var img = document.getElementById("image");
                     img.src = "/images/there-is-a-brain-inside.jpeg";
-                    img.style.border = "var(--border) solid var(--hover)";
+                    img.style["border-color"] = "var(--hover)";
                 }
 
                 function revertImage() {
                     var img = document.getElementById("image");
                     img.src = "/images/hallvard.jpeg";
-                    img.style.border = "var(--border) solid var(--link)";
+                    img.style["border-color"] = "var(--link)";
                 }
             </script>
         </main>
