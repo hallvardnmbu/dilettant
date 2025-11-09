@@ -71,10 +71,13 @@ main menu.long nav {
     justify-content: center;
     gap: var(--gap);
 }
-img {
+img,
+pre {
+    cursor: pointer;
     padding: var(--padding);
     border: var(--border) solid var(--link);
-
+}
+img {
     --size: calc(var(--image) - 2 * var(--padding) - 2 * var(--border));
     height: var(--size);
     width: var(--size);

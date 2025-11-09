@@ -46,6 +46,11 @@ const dilettantApp = new Elysia()
     return new Response(readFileSync(join(__dirname, "skole.html"), "utf-8"), {
       headers: { "Content-Type": "text/html" },
     });
+  })
+  .get("/kamera", () => {
+    return new Response(readFileSync(join(__dirname, "kamera.html"), "utf-8"), {
+      headers: { "Content-Type": "text/html" },
+    });
   });
 
 export default dilettantApp;
