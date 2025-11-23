@@ -14,9 +14,8 @@
                 pointer-events: none;
             }
             #ascii {
-                font-size: 8px;
+                font-size: 12px;
                 line-height: 0.8;
-                letter-spacing: 1px;
 
                 display: inline-flex;
                 justify-content: center;
@@ -54,10 +53,45 @@
             const ctx = c.getContext("2d", { willReadFrequently: true });
 
             const FPS = 30;
-            const W = 120;
-            const H = 90;
-            c.width = W;
-            c.height = H;
+            let W = 120;
+            let H = 90;
+
+            function updateDimensions() {
+                // Measure character size
+                const span = document.createElement("span");
+                span.textContent = "X";
+                ascii.appendChild(span);
+                const rect = span.getBoundingClientRect();
+                ascii.removeChild(span);
+
+                const charW = rect.width || 7.2; // approx for 12px font
+                const charH = rect.height || 9.6;
+
+                // Calculate available width: 80% of body, max 500px
+                const bodyWidth = document.body.clientWidth;
+                const targetWidth = Math.min(bodyWidth * 0.8, 500);
+
+                // Calculate W to fill the width
+                W = Math.floor(targetWidth / charW);
+
+                // Calculate H to maintain video aspect ratio
+                const aspect =
+                    v.videoWidth && v.videoHeight
+                        ? v.videoWidth / v.videoHeight
+                        : 4 / 3;
+
+                // H = W * (1/aspect) * (charW / charH)
+                H = Math.floor(W * (1 / aspect) * (charW / charH));
+
+                // Ensure minimum dimensions to avoid invalid canvas size
+                W = Math.max(1, W);
+                H = Math.max(1, H);
+
+                c.width = W;
+                c.height = H;
+            }
+
+            window.addEventListener("resize", updateDimensions);
 
             const chars = " ◦◌◯◎◉◍●";
             const size = chars.length - 1;
@@ -65,15 +99,17 @@
             navigator.mediaDevices
                 .getUserMedia({
                     video: {
-                        width: { exact: W },
-                        height: { exact: H },
+                        width: { ideal: 640 },
+                        height: { ideal: 480 },
                         frameRate: { max: FPS },
                     },
                 })
                 .then((stream) => {
                     v.srcObject = stream;
                     v.addEventListener("play", () => {
+                        updateDimensions();
                         setInterval(() => {
+                            if (W <= 0 || H <= 0) return;
                             ctx.drawImage(v, 0, 0, W, H);
                             const p = ctx.getImageData(0, 0, W, H).data;
 
@@ -96,7 +132,9 @@
                         }, 1000 / FPS);
                     });
                 })
-                .catch((err) => {});
+                .catch((err) => {
+                    console.error("Error accessing camera:", err);
+                });
         </script>
 
         <script>
@@ -104,7 +142,7 @@
                 var ascii = document.getElementById("ascii");
                 ascii.style["border-color"] = hover
                     ? "var(--hover)"
-                    : "var(--link)";
+                    : "var(--contrast)";
             }
         </script>
     </body>

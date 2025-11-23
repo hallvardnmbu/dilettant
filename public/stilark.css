@@ -17,15 +17,14 @@
     --content: 600px;
     --image: 230px;
 
-    --background: #ffffff;
-    --contrast: #b2b2b2;
-    --text: #000000;
-
-    --link: #3366cc;
+    --background: #fcfbf9;
+    --text: #333333;
+    --contrast: #3366cc;
     --hover: #cc9933;
 }
 
 html {
+    height: 100%;
     scrollbar-gutter: stable;
 }
 body {
@@ -35,7 +34,7 @@ body {
     line-height: 1.5rem;
 
     color: var(--text);
-    background-color: var(--background);
+    background: var(--background);
 
     padding: calc(2 * var(--gap)) 0;
 
@@ -65,21 +64,25 @@ main menu.long {
 nav,
 main menu a {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     gap: var(--border);
 }
 main menu.long nav {
+    margin-top: calc(2 * var(--padding));
     justify-content: center;
     gap: var(--gap);
 }
-img,
 pre {
     cursor: pointer;
-    padding: var(--padding);
-    border: var(--border) solid var(--link);
+    padding: calc(var(--padding) - var(--border) / 2) var(--padding);
+    border: var(--border) solid var(--contrast);
 }
 img {
+    cursor: pointer;
+    padding: var(--padding);
+    border: var(--border) solid var(--contrast);
     --size: calc(var(--image) - 2 * var(--padding) - 2 * var(--border));
     height: var(--size);
     width: var(--size);
@@ -87,7 +90,7 @@ img {
 
 a,
 a:visited {
-    color: var(--link);
+    color: var(--contrast);
     text-decoration: none;
     display: inline-block;
 }
@@ -145,10 +148,6 @@ section span {
     display: inline-block;
 
     color: var(--background);
-
     background-color: var(--contrast);
-
-    border-left: none;
-    padding: 0 calc(var(--padding) + var(--border)) 0
-        calc(var(--padding) + var(--border));
+    padding: 0 calc(var(--padding) + var(--border)) 0 var(--padding);
 }
