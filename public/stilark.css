@@ -76,7 +76,7 @@ main menu.long nav {
 }
 pre {
     cursor: pointer;
-    padding: calc(var(--padding) - var(--border) / 2) var(--padding);
+    padding: var(--padding);
     border: var(--border) solid var(--contrast);
 }
 img {

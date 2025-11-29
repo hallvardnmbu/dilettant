@@ -14,8 +14,11 @@
                 pointer-events: none;
             }
             #ascii {
+                font-family: monospace;
                 font-size: 12px;
-                line-height: 0.8;
+                text-align: center;
+                line-height: 0.5;
+                letter-spacing: 1px;
 
                 display: inline-flex;
                 justify-content: center;
@@ -64,8 +67,7 @@
                 const rect = span.getBoundingClientRect();
                 ascii.removeChild(span);
 
-                const charW = rect.width || 7.2; // approx for 12px font
-                const charH = rect.height || 9.6;
+                const charW = rect.width || 7.2;
 
                 // Calculate available width: 80% of body, max 500px
                 const bodyWidth = document.body.clientWidth;
@@ -75,13 +77,9 @@
                 W = Math.floor(targetWidth / charW);
 
                 // Calculate H to maintain video aspect ratio
-                const aspect =
-                    v.videoWidth && v.videoHeight
-                        ? v.videoWidth / v.videoHeight
-                        : 4 / 3;
+                const aspect = v.videoWidth && v.videoHeight ? v.videoWidth / v.videoHeight : 4 / 3;
 
-                // H = W * (1/aspect) * (charW / charH)
-                H = Math.floor(W * (1 / aspect) * (charW / charH));
+                H = Math.floor(1.5 * W * (1 / aspect));
 
                 // Ensure minimum dimensions to avoid invalid canvas size
                 W = Math.max(1, W);
@@ -93,6 +91,7 @@
 
             window.addEventListener("resize", updateDimensions);
 
+            // const chars = " `.-_:'\"~;*!/r(l1Z4)J+?vu#m&w@%";
             const chars = " ◦◌◯◎◉◍●";
             const size = chars.length - 1;
 
@@ -117,14 +116,8 @@
                             for (let y = 0; y < H; y++) {
                                 for (let x = W - 1; x >= 0; x--) {
                                     const i = (y * W + x) * 4;
-                                    const brightness =
-                                        (p[i] + p[i + 1] + p[i + 2]) / 3;
-                                    image +=
-                                        chars[
-                                            Math.round(
-                                                (1 - brightness / 255) * size,
-                                            )
-                                        ];
+                                    const brightness = (p[i] + p[i + 1] + p[i + 2]) / 3;
+                                    image += chars[Math.round((1 - brightness / 255) * size)];
                                 }
                                 image += "\n";
                             }
@@ -140,9 +133,7 @@
         <script>
             function border(hover) {
                 var ascii = document.getElementById("ascii");
-                ascii.style["border-color"] = hover
-                    ? "var(--hover)"
-                    : "var(--contrast)";
+                ascii.style["border-color"] = hover ? "var(--hover)" : "var(--contrast)";
             }
         </script>
     </body>
