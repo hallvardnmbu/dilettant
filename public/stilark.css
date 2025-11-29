@@ -151,3 +151,19 @@ section span {
     background-color: var(--contrast);
     padding: 0 calc(var(--padding) + var(--border)) 0 var(--padding);
 }
+
+.alternate {
+    position: relative;
+    width: max-content;
+    animation: scroll 3s infinite alternate ease-in-out;
+}
+@keyframes scroll {
+    0% {
+        left: 0;
+        transform: translateX(0);
+    }
+    100% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
