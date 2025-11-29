@@ -128,7 +128,9 @@ section > * {
     padding-left: var(--padding);
     border-left: var(--border) solid var(--contrast);
 
-    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 h2 {
     font-size: inherit;
