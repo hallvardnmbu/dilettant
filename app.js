@@ -9,7 +9,7 @@ __dirname =
     ? __dirname.replace(/^\/([A-Z]):/, "$1:\\").replace(/\//g, "\\")
     : __dirname;
 
-const dilettantApp = new Elysia()
+const dilettant = new Elysia()
   .use(
     staticPlugin({
       assets: join(__dirname, "."),
@@ -53,11 +53,9 @@ const dilettantApp = new Elysia()
     });
   });
 
-export default dilettantApp;
+export default dilettant;
 
 if (import.meta.main) {
-  dilettantApp.listen(8080);
-  console.log(
-    `http://${dilettantApp.server?.hostname}:${dilettantApp.server?.port}`,
-  );
+  dilettant.listen(8080);
+  console.log(`http://${dilettant.server?.hostname}:${dilettant.server?.port}`);
 }
