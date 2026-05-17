@@ -154,6 +154,12 @@ section span {
     padding: 0 calc(var(--padding) + var(--border)) 0 var(--padding);
 }
 
+section span.hollow {
+    color: var(--text);
+    background-color: transparent;
+    border-top: var(--border) solid var(--contrast);
+}
+
 .alternate {
     position: relative;
     width: max-content;
