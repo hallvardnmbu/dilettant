@@ -155,6 +155,7 @@ section span {
 }
 
 section span.hollow {
+    font-style: italic;
     color: var(--text);
     background-color: transparent;
     border-top: var(--border) solid var(--contrast);
