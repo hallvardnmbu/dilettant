@@ -124,6 +124,9 @@ section {
     padding-left: calc(var(--heading) + 2 * var(--gap));
     margin: calc(2 * var(--gap)) 0;
 }
+section a.website {
+    font-weight: bold;
+}
 section > * {
     padding-left: var(--padding);
     border-left: var(--border) solid var(--contrast);
@@ -146,6 +149,7 @@ h2 {
     word-wrap: break-word;
     border-left: none;
 }
+
 section span {
     display: inline-block;
 
@@ -153,7 +157,6 @@ section span {
     background-color: var(--contrast);
     padding: 0 calc(var(--padding) + var(--border)) 0 var(--padding);
 }
-
 section span.hollow {
     font-style: italic;
     color: var(--text);
