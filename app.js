@@ -1,6 +1,7 @@
-import { join } from "path";
+import { join, resolve, sep } from "path";
 
 const dir = import.meta.dir;
+const publicDir = join(dir, "public");
 
 const routes = {
   "/": "meg.html",
@@ -19,9 +20,17 @@ export default async function dilettant(request) {
     return new Response(Bun.file(join(dir, routes[pathname])));
   }
 
-  for (const base of ["public", "."]) {
-    const file = Bun.file(join(dir, base, pathname));
-    if (await file.exists()) return new Response(file);
+  let decoded;
+  try {
+    decoded = decodeURIComponent(pathname);
+  } catch {
+    return new Response("Bad request", { status: 400 });
+  }
+  if (decoded.includes("\0")) return new Response("Bad request", { status: 400 });
+  const file = resolve(publicDir, "." + decoded);
+  if (file.startsWith(publicDir + sep)) {
+    const f = Bun.file(file);
+    if (await f.exists()) return new Response(f);
   }
 
   return new Response("Not found", { status: 404 });
